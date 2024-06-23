@@ -8,44 +8,44 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 const components = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Mens Wear",
+    href: "/collections/men",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "See Our Best Collections of Mens Wear for sale at the most reasonable prices.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Womens Wear",
+    href: "/collections/women",
     description:
-      "For sighted users to preview content available behind a link.",
+      "We have the latest collection of womens wear for sale at the most reasonable prices.",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Kids Wear",
+    href: "/collections/kids",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "We have the latest collection of kids wear for sale at the most reasonable prices.",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "Jeans",
+    href: "/collections/jeans",
+    description:
+      "We have the latest collection of jeans for sale at the most reasonable prices.",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "T-Shirts",
+    href: "/collections/tshirts",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "We have the latest collection of t-shirts for sale at the most reasonable prices.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Trousers",
+    href: "/collections/trousers",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "We have the latest collection of trousers for sale at the most reasonable prices.",
   },
 ];
 
@@ -55,14 +55,10 @@ export function Navbar() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavLink
-            className="rounded-md"
-            to="/docs"
-            legacybehavior="true"
-            passhref="true"
+            to="/"
+            className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}
           >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
+            Home
           </NavLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
@@ -85,12 +81,12 @@ export function Navbar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink
-            href="/docs"
-            className={navigationMenuTriggerStyle()}
+          <NavLink
+            to="/"
+            className={`group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50`}
           >
             Documentation
-          </NavigationMenuLink>
+          </NavLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -102,7 +98,7 @@ const ListItem = React.forwardRef(
     return (
       <li>
         <NavigationMenuLink asChild>
-          <a
+          <NavLink
             ref={ref}
             className={cn(
               "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -114,7 +110,7 @@ const ListItem = React.forwardRef(
             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
               {children}
             </p>
-          </a>
+          </NavLink>
         </NavigationMenuLink>
       </li>
     );
