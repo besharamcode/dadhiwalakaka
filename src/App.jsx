@@ -14,7 +14,7 @@ const App = () => {
   const Trouser = lazy(() => import("./components/Collections/Trouser"));
 
   return (
-    <div className="px-[4vw]">
+    <div className="">
       <Router>
         <Header />
         <Suspense fallback={<div>Loading...</div>}>

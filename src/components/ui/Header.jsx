@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <header className="flex justify-between py-4">
+    <header className="flex justify-between py-4 px-[4vw] border-b sticky top-0">
       <NavLink to="/" className="text-3xl font-bold">
         Logo
       </NavLink>
